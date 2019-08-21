@@ -1,0 +1,16 @@
+FROM openjdk:8-jdk-alpine
+
+# VOLUME
+WORKDIR /home/spring-docker
+
+RUN mkdir data && mkdir data/messages
+
+VOLUME /home/spring-docker/data
+
+EXPOSE 8080
+
+ARG JAR_FILE=spring-docker-0.0.1-SNAPSHOT.jar
+
+ADD ${JAR_FILE} /home/spring-docker/spring-docker.jar
+
+ENTRYPOINT ["java","-jar","spring-docker.jar"]

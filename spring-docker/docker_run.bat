@@ -1,0 +1,1 @@
+docker run --name=springdocker --rm -v %CD%/data:/home/spring-docker/data -p 8081:8081 spring-docker
