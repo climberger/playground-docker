@@ -19,3 +19,13 @@ services:
     restart: always
     ports:
       - 9001:8080
+
+# mysql data is stored in /var/lib/mysql within the container_name
+# bind this folder to volume like
+#volumes:
+#   - mysql-data:/var/lib/mysql
+
+# declare volume like this
+#volumes:
+#   mysql-data:
+#      external: true
